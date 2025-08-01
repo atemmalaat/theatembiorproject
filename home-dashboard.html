@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MadeByKings | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: #f8f9fa;
+      padding: 2rem 1rem;
+      border-right: 1px solid #ddd;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 2rem;
+      overflow-y: auto;
+      height: 100vh;
+    }
+    .nav-link.active {
+      font-weight: bold;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="text-center mb-4">
+      <img src="public/images/mbk logo cartoon-2.png" width="60" alt="MBK Logo" />
+      <h5 class="mt-2">MadeByKings</h5>
+    </div>
+    <nav class="nav flex-column">
+      <a class="nav-link active" href="#" onclick="showSection('slim')">🏀 Slim Reapers</a>
+      <a class="nav-link" href="#" onclick="showSection('searchers')">🎙️ The Searchers Podcast</a>
+      <a class="nav-link" href="#" onclick="showSection('mbk')">🎥 MadeByKings YouTube</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div id="slim" class="content-section">
+      <h2>🏀 Slim Reapers</h2>
+      <p>Grassroots basketball built on grit, mentorship, and discipline. We develop overlooked talent and provide real opportunities through elite coaching and community support.</p>
+      <p>This platform showcases the Slim Reapers’ story, team content, and sponsor-ready profiles to invest in the next generation of hoopers.</p>
+    </div>
+
+    <div id="searchers" class="content-section d-none">
+      <h2>🎙️ The Searchers Podcast</h2>
+      <p>A raw, purpose-driven podcast where culture, creativity, and identity collide. We ask the questions that matter and tell the stories that don’t always make it into the mainstream.</p>
+      <p>Guests range from community leaders to emerging voices. It’s about curiosity. It’s about perspective. It’s about legacy through conversation.</p>
+    </div>
+
+    <div id="mbk" class="content-section d-none">
+      <h2>🎥 MadeByKings YouTube</h2>
+      <p>MBK is a media hub for creators, thinkers, and leaders. Our content blends authenticity, storytelling, and ownership—highlighting the voices and journeys that deserve to be seen and heard.</p>
+      <p>From interviews and behind-the-scenes to docs and experiments, MadeByKings is your favorite channel’s favorite channel.</p>
+    </div>
+  </div>
+
+  <!-- JS to toggle content -->
+  <script>
+    function showSection(section) {
+        //display none of all the sections queried
+      document.querySelectorAll('.content-section').forEach(element => element.classList.add('d-none'));
+        //Then remove the "d-non" to the one section we want shown
+      document.getElementById(section).classList.remove('d-none');
+
+      
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
